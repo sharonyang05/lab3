@@ -43,14 +43,20 @@ public class ListTests {
         list1.add("adam");
         list1.add("david");
         list1.add("eve");
-        list1.add("luke");
 
         List<String> list2 = new ArrayList<>();
         list2.add("abraham");
         list2.add("cain");
-        list2.add("jesus");
-        list2.add("matthew");
 
         List<String> mergedList = ListExamples.merge(list1, list2);
+
+        List<String> expectedList = new ArrayList<>();
+        expectedList.add("abraham");
+        expectedList.add("adam");
+        expectedList.add("cain");
+        expectedList.add("david");
+        expectedList.add("eve");
+
+        assertEquals(expectedList, mergedList);
     }
 }
